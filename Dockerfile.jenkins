@@ -1,0 +1,7 @@
+FROM jenkins/jenkins:lts
+USER root
+
+RUN apt-get update \
+    && apt-get install --no-install-recommends docker-cli -y \
+    && rm -rf /var/lib/apt/list/*
+USER jenkins
